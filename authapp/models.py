@@ -10,3 +10,7 @@ class User(AbstractUser):
     
     def get_username(self):
         return self.email
+    
+    def get_first_name(self):
+        return self.first_name
+    
