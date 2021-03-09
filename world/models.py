@@ -10,5 +10,10 @@ class CampingSpot(models.Model):
     location = models.PointField(srid=4326)
     owner = models.ForeignKey(User, on_delete=models.CASCADE)
 
+    @property
+    def lat_lon(self):
+        return list(getattr(self.location, 'coords', [])[::-1])
+
     def __str__(self):
         return self.title
+    

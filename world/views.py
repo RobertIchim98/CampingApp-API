@@ -7,7 +7,7 @@ from rest_framework.response import Response
 from rest_framework.views import APIView
 
 # Create your views here.
-class TestView(APIView):
+class CampSpotsView(APIView):
     def get(self,request, *args, **kwargs):
         qs = CampingSpot.objects.all()
         serializer = CampingSpotSerializer(qs, many=True)
