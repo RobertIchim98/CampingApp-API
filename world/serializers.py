@@ -13,5 +13,5 @@ class CampingSpotSerializer(serializers.ModelSerializer):
         model = CampingSpot
         lat_lon = serializers.Field()
         fields = (
-            'id','title', 'description', 'location', 'timestamp', 'owner', 'lat_lon'
+            'id','title', 'description', 'location', 'timestamp', 'owner', 'lat_lon', 'photo'
         )

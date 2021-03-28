@@ -9,6 +9,7 @@ class CampingSpot(models.Model):
     timestamp = models.DateTimeField(auto_now_add=True)
     location = models.PointField(srid=4326)
     owner = models.ForeignKey(User, on_delete=models.CASCADE)
+    photo = models.ImageField(upload_to='media')
 
     @property
     def lat_lon(self):

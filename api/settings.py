@@ -17,7 +17,8 @@ from datetime import timedelta
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
-
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_URL = '/media/'
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
@@ -63,11 +64,14 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'api.urls'
+SETTINGS_PATH = os.path.dirname(os.path.dirname(__file__))
 
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'build')],
+        'DIRS': [],
+        #'DIRS': [os.path.join(SETTINGS_PATH, 'templates')],
+        #'DIRS': [os.path.join(BASE_DIR, 'build')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -172,8 +176,13 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
-STATIC_URL = '/static/'
+STATIC_URL = 'static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'build/static')
+    #os.path.join(BASE_DIR, 'build/static')
 ]
+
+#SETTINGS_PATH = os.path.dirname(os.path.dirname(__file__))
+#TEMPLATE_DIRS = (
+#    os.path.join(SETTINGS_PATH, 'templates'),
+#)
